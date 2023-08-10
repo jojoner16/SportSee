@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const USER_MAIN_DATA = [
   {
     id: 12,
@@ -260,62 +262,57 @@ const USER_PERFORMANCE = [
   },
 ];
 
-/**
- * Get user infos
- *
- * @param {number} id User id
- * @returns {object} Response
- */
+// Fonction de récupération des informations utilisateur
 export const getUserInfos = async (id) => {
   try {
     const res = USER_MAIN_DATA.find((el) => el.id === id);
     return { data: res };
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error('getUserInfos error:', error);
+    throw error;
   }
 };
 
-/**
- * Get user activity
- *
- * @param {number} id User id
- * @returns {object} Response
- */
+// Fonction de récupération de l'activité utilisateur
 export const getUserActivity = async (id) => {
   try {
     const res = USER_ACTIVITY.find((el) => el.userId === id);
     return { data: res };
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error('getUserActivity error:', error);
+    throw error;
   }
 };
 
-/**
- * Get user average session
- *
- * @param {number} id User id
- * @returns {object} Response
- */
+// Fonction de récupération de la session moyenne de l'utilisateur
 export const getUserAverageSessions = async (id) => {
   try {
     const res = USER_AVERAGE_SESSIONS.find((el) => el.userId === id);
     return { data: res };
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error('getUserAverageSessions error:', error);
+    throw error;
   }
 };
 
-/**
- * Get user performance
- *
- * @param {number} id User id
- * @returns {object} Response
- */
+// Fonction de récupération des performances utilisateur
 export const getUserPerformance = async (id) => {
   try {
     const res = USER_PERFORMANCE.find((el) => el.userId === id);
     return { data: res };
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error('getUserPerformance error:', error);
+    throw error;
+  }
+};
+
+// Exemple d'utilisation d'Axios pour simuler une requête à l'API
+export const fetchUserDataFromApi = async (id) => {
+  try {
+    const response = await axios.get(`http://localhost:3000/user/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('fetchUserDataFromApi error:', error);
+    throw error;
   }
 };
