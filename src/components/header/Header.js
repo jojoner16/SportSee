@@ -29,6 +29,33 @@ const Nav = styled.nav`
     color: white;
     font-weight: 500;
     font-size: 24px;
+    position: relative; /* Ajoutez une position relative */
+
+    &:hover {
+      color: red;
+      transition: color 0.3s ease;
+    }
+
+    /* Pseudo-élément pour l'underline */
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: red;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    /* Style pour :hover */
+    &:hover::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
   }
 `;
 
