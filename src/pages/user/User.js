@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import UserProfil from '../../components/userProfil/UserProfil';
+import UserActivity from '../../components/userActivity/UserActivity';
 import styled from 'styled-components';
 import callApi from '../../services/CallApi';
 
@@ -19,7 +20,7 @@ function User() {
   const { userId } = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
 
   const [userInfo, setUserInfo] = useState(null);
-  // const [userActivity, setUserActivity] = useState(null);
+  const [userActivity, setUserActivity] = useState(null);
   // const [userAverageSessions, setUserAverageSessions] = useState(null);
   // const [userPerformance, setUserPerformance] = useState(null);
 
@@ -29,8 +30,8 @@ function User() {
       const data = await callApi(parseInt(userId));
       setUserInfo(data);
 
-      // console.log(userInfo);
-      // setUserActivity(data.userActivity.data);
+      setUserActivity(data.activity.data);
+
       // setUserAverageSessions(data.userAverageSessions.data);
       // setUserPerformance(data.userPerformance.data);
     }
@@ -41,6 +42,7 @@ function User() {
   return (
     <Main>
       <UserProfil firstName={userInfo && userInfo.infos.userInfos.firstName} />
+      <UserActivity userActivity={userActivity} />
     </Main>
   );
 }
