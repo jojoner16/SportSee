@@ -1,40 +1,50 @@
-import CallApiService from './CallApi';
-import * as MockedData from './MockedData';
+import {
+  USER_MAIN_DATA,
+  USER_ACTIVITY,
+  USER_AVERAGE_SESSIONS,
+  USER_PERFORMANCE,
+} from './MockedData';
 
-class GetDataService {
-  static async getUserInfos(id) {
-    if (process.env.NODE_ENV === 'development') {
-      return MockedData.getUserInfos(id).data;
-    } else {
-      return await CallApiService.getUserInfos(id);
-    }
+// Fonction de récupération des informations utilisateur
+export const getUserInfos = async (id) => {
+  try {
+    const res = USER_MAIN_DATA.find((el) => el.id === id);
+    return { data: res };
+  } catch (error) {
+    console.error('getUserInfos error:', error);
+    throw error;
   }
+};
 
-  static async getUserActivity(id) {
-    if (process.env.NODE_ENV === 'development') {
-      return MockedData.getUserActivity(id).data;
-    } else {
-      return await CallApiService.getUserActivity(id);
-    }
+// Fonction de récupération de l'activité utilisateur
+export const getUserActivity = async (id) => {
+  try {
+    const res = USER_ACTIVITY.find((el) => el.userId === id);
+    return { data: res };
+  } catch (error) {
+    console.error('getUserActivity error:', error);
+    throw error;
   }
+};
 
-  static async getUserAverageSessions(id) {
-    if (process.env.NODE_ENV === 'development') {
-      return MockedData.getUserAverageSessions(id).data;
-    } else {
-      return await CallApiService.getUserAverageSessions(id);
-    }
+// Fonction de récupération de la session moyenne de l'utilisateur
+export const getUserAverageSessions = async (id) => {
+  try {
+    const res = USER_AVERAGE_SESSIONS.find((el) => el.userId === id);
+    return { data: res };
+  } catch (error) {
+    console.error('getUserAverageSessions error:', error);
+    throw error;
   }
+};
 
-  static async getUserPerformance(id) {
-    if (process.env.NODE_ENV === 'development') {
-      return MockedData.getUserPerformance(id).data;
-    } else {
-      return await CallApiService.getUserPerformance(id);
-    }
+// Fonction de récupération des performances utilisateur
+export const getUserPerformance = async (id) => {
+  try {
+    const res = USER_PERFORMANCE.find((el) => el.userId === id);
+    return { data: res };
+  } catch (error) {
+    console.error('getUserPerformance error:', error);
+    throw error;
   }
-
-  // Vous pouvez ajouter d'autres méthodes ici en fonction de vos besoins
-}
-
-export default GetDataService;
+};

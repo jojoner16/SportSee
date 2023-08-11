@@ -1,8 +1,8 @@
-// User.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import UserProfile from '../../components/userProfil/UserProfil';
+import UserProfil from '../../components/userProfil/UserProfil';
 import styled from 'styled-components';
+import callApi from '../../services/CallApi';
 
 const Main = styled.main`
   max-width: 1240px;
@@ -16,11 +16,35 @@ const Main = styled.main`
 `;
 
 function User() {
-  const { userId } = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
+  const userId = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
+
+  const [userInfo, setUserInfo] = useState();
+  // const [userActivity, setUserActivity] = useState(null);
+  // const [userAverageSessions, setUserAverageSessions] = useState(null);
+  // const [userPerformance, setUserPerformance] = useState(null);
+
+  useEffect(() => {
+    // Fetch user data using the getUserData function
+    async function fetchUserData() {
+      try {
+        const data = await callApi(12);
+        setUserInfo(data && data.userInfos.data);
+
+        // console.log(userInfo);
+        // setUserActivity(data.userActivity.data);
+        // setUserAverageSessions(data.userAverageSessions.data);
+        // setUserPerformance(data.userPerformance.data);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    }
+
+    fetchUserData();
+  }, [userId]);
 
   return (
     <Main>
-      <UserProfile userId={parseInt(userId)} />
+      <UserProfil firstName={userInfo && userInfo} />
     </Main>
   );
 }
