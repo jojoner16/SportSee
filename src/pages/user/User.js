@@ -16,9 +16,9 @@ const Main = styled.main`
 `;
 
 function User() {
-  const userId = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
+  const { userId } = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
 
-  const [userInfo, setUserInfo] = useState();
+  const [userInfo, setUserInfo] = useState(null);
   // const [userActivity, setUserActivity] = useState(null);
   // const [userAverageSessions, setUserAverageSessions] = useState(null);
   // const [userPerformance, setUserPerformance] = useState(null);
@@ -26,17 +26,13 @@ function User() {
   useEffect(() => {
     // Fetch user data using the getUserData function
     async function fetchUserData() {
-      try {
-        const data = await callApi(12);
-        setUserInfo(data && data.userInfos.data);
+      const data = await callApi(parseInt(userId));
+      setUserInfo(data);
 
-        // console.log(userInfo);
-        // setUserActivity(data.userActivity.data);
-        // setUserAverageSessions(data.userAverageSessions.data);
-        // setUserPerformance(data.userPerformance.data);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
+      // console.log(userInfo);
+      // setUserActivity(data.userActivity.data);
+      // setUserAverageSessions(data.userAverageSessions.data);
+      // setUserPerformance(data.userPerformance.data);
     }
 
     fetchUserData();
@@ -44,7 +40,7 @@ function User() {
 
   return (
     <Main>
-      <UserProfil firstName={userInfo && userInfo} />
+      <UserProfil firstName={userInfo && userInfo.infos.userInfos.firstName} />
     </Main>
   );
 }

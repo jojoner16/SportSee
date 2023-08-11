@@ -7,16 +7,18 @@ import {
 
 // Fonction pour simuler un appel à l'API et récupérer les données utilisateur
 const callApi = async (id) => {
+  console.log(id);
   try {
-    const userInfos = getUserInfos(id);
-    const userActivity = getUserActivity(id);
-    const userAverageSessions = getUserAverageSessions(id);
-    const userPerformance = getUserPerformance(id);
+    const userInfos = await getUserInfos(id);
+    const userActivity = await getUserActivity(id);
+    const userAverageSessions = await getUserAverageSessions(id);
+    const userPerformance = await getUserPerformance(id);
+
     return {
-      userInfos,
-      userActivity,
-      userAverageSessions,
-      userPerformance,
+      infos: userInfos.data,
+      activity: userActivity,
+      averageSessions: userAverageSessions,
+      performance: userPerformance,
     };
   } catch (error) {
     console.error('callApi error:', error);
