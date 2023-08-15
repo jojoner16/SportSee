@@ -7,13 +7,7 @@ import callApi from '../../services/CallApi';
 
 const Main = styled.main`
   max-width: 1240px;
-  margin-left: 15rem;
-  a {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    color: red;
-  }
+  margin-left: 14rem;
 `;
 
 function User() {
