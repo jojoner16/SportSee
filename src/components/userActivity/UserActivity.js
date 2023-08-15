@@ -43,7 +43,7 @@ function UserActivity({ userActivity }) {
   function CustomToolTip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
-        <StyledToolTip className="tooltip">
+        <StyledToolTip>
           <p>{payload[0].value + 'kg'}</p>
           <p>{payload[1].value + 'Kcal'}</p>
         </StyledToolTip>
@@ -53,7 +53,7 @@ function UserActivity({ userActivity }) {
   }
 
   return (
-    <div className="activityContainer" style={activityContainerStyles}>
+    <div style={activityContainerStyles}>
       <Title>Activité quotidienne</Title>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={userActivity.sessions} barSize={7} barGap={8}>
