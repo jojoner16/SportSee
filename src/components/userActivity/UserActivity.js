@@ -18,8 +18,8 @@ const Title = styled.h2`
   font-weight: 500;
 `;
 
-const Tooltips = styled.div`
-  display: block;
+const StyledToolTip = styled.div`
+  display: block !important;
   padding: 0.25rem 0.4375rem;
   background-color: red;
   color: white;
@@ -27,6 +27,13 @@ const Tooltips = styled.div`
   line-height: 1.5rem;
   text-align: center;
 `;
+
+const activityContainerStyles = {
+  width: '52.1875rem',
+  backgroundColor: '#FBFBFB',
+  boxShadow: '0px 2px 4px 0px #00000005',
+  padding: '1.4rem',
+};
 
 function UserActivity({ userActivity }) {
   if (!userActivity) {
@@ -36,17 +43,17 @@ function UserActivity({ userActivity }) {
   function CustomToolTip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
-        <Tooltips>
+        <StyledToolTip className="tooltip">
           <p>{payload[0].value + 'kg'}</p>
           <p>{payload[1].value + 'Kcal'}</p>
-        </Tooltips>
+        </StyledToolTip>
       );
     }
     return null;
   }
 
   return (
-    <div>
+    <div className="activityContainer" style={activityContainerStyles}>
       <Title>Activité quotidienne</Title>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={userActivity.sessions} barSize={7} barGap={8}>
