@@ -6,7 +6,7 @@ import cheeseburger from '../../assets/lipides-icon.svg';
 import styled from 'styled-components';
 
 const dashboardAside = {
-  marginLeft: '14rem',
+  marginLeft: '10rem',
 };
 
 const CardWrapper = styled.div`
@@ -15,29 +15,53 @@ const CardWrapper = styled.div`
 `;
 
 const CardContainer = styled.div`
-  padding: 10px;
-  margin: 10px;
+  display: flex;
+  width: 258px;
+  height: 124px;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
   background-color: #fbfbfb;
   box-shadow: 0px 2px 4px 0px #00000005;
 `;
 
 const IconWrapper = styled.div`
-  margin-right: 1rem;
+  margin-right: 1.2rem;
 `;
+
+const title = {
+  lineHeight: '1.5rem',
+};
+
+const cardTitle = {
+  fontSize: '1.25rem',
+  fontWeight: '700',
+  color: '#282D30',
+};
+
+const cardSubtitle = {
+  fontSize: '0.875rem',
+  fontWeight: '700',
+  color: '#74798C',
+};
+
+const cardIcon = {
+  marginLeft: '2rem',
+};
 
 function Card({ userKeyData, unit, subtitle, className, logo }) {
   return (
     <CardContainer>
       <CardWrapper className={`card ${className}`}>
         <IconWrapper>
-          <img src={logo} alt="" className="card-icon center" />
+          <img src={logo} alt="icon" style={cardIcon} />
         </IconWrapper>
-        <div>
-          <p className="card-title">
+        <div style={title}>
+          <p style={cardTitle}>
             {userKeyData.toLocaleString('en-US')}
             {unit}
           </p>
-          <p className="card-subtitle">{subtitle}</p>
+          <p style={cardSubtitle}>{subtitle}</p>
         </div>
       </CardWrapper>
     </CardContainer>
