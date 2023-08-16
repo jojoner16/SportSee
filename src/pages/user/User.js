@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import UserProfil from '../../components/userProfil/UserProfil';
 import UserActivity from '../../components/userActivity/UserActivity';
-import UserDashboard from '../../components/dashboardAside/DashboardAside';
+import UserDashboard from '../../components/userAside/UserAside';
 import styled from 'styled-components';
 import callApi from '../../services/CallApi';
 

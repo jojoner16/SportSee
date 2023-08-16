@@ -30,6 +30,7 @@ const StyledToolTip = styled.div`
 
 const activityContainerStyles = {
   width: '52.1875rem',
+  height: '20rem',
   backgroundColor: '#FBFBFB',
   boxShadow: '0px 2px 4px 0px #00000005',
   padding: '1.4rem',
