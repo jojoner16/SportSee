@@ -9,12 +9,9 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const RedBackgroundResponsiveContainer = styled(ResponsiveContainer)`
-  background-color: red;
-`;
-
 const averageSessionContainerStyle = {
   backgroundColor: 'red',
+  borderRadius: '5px',
   width: '258px',
   height: '263px',
   marginTop: '-18rem',
@@ -23,12 +20,27 @@ const averageSessionContainerStyle = {
 const Title = styled.h2`
   width: 9.1875rem;
   height: 3rem;
+  margin: 1.4rem;
   position: absolute;
   color: #ffffff;
   opacity: 0.504;
   font-size: 0.9375rem;
   font-weight: 500;
   line-height: 1.5rem;
+`;
+
+const StyledToolTip = styled.div`
+  width: 2.4375rem;
+  height: 1.5625rem;
+  background-color: white;
+
+  p {
+    font-size: 0.625rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0rem;
+    text-align: center;
+  }
 `;
 
 function UserAverageSessions({ userAverageSessions }) {
@@ -46,9 +58,9 @@ function UserAverageSessions({ userAverageSessions }) {
   function CustomToolTip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
-        <div>
+        <StyledToolTip>
           <p>{payload[0].value + ' min'}</p>
-        </div>
+        </StyledToolTip>
       );
     }
     return null;
@@ -64,7 +76,7 @@ function UserAverageSessions({ userAverageSessions }) {
         Durée moyenne des <br />
         sessions
       </Title>
-      <RedBackgroundResponsiveContainer>
+      <ResponsiveContainer>
         <LineChart data={userAverageSessions.sessions}>
           <Line
             type="natural"
@@ -101,7 +113,7 @@ function UserAverageSessions({ userAverageSessions }) {
             </linearGradient>
           </defs>
         </LineChart>
-      </RedBackgroundResponsiveContainer>
+      </ResponsiveContainer>
     </div>
   );
 }
