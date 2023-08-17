@@ -10,11 +10,10 @@ import {
 } from 'recharts';
 
 const averageSessionContainerStyle = {
-  backgroundColor: 'red',
+  backgroundColor: '#FF0000',
   borderRadius: '5px',
   width: '258px',
   height: '263px',
-  marginTop: '-18rem',
 };
 
 const Title = styled.h2`
