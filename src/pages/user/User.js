@@ -4,6 +4,7 @@ import UserProfil from '../../components/userProfil/UserProfil';
 import UserActivity from '../../components/userActivity/UserActivity';
 import UserDashboard from '../../components/userAside/UserAside';
 import UserAverageSessions from '../../components/userAverageSession/UserAverageSession';
+import UserPerformance from '../../components/userPerformance/UserPerformance';
 import styled from 'styled-components';
 import callApi from '../../services/CallApi';
 
@@ -16,13 +17,19 @@ const ContentContainer = styled.div`
   display: flex;
 `;
 
+const CustomContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  margin-top: -18rem;
+`;
+
 function User() {
   const { userId } = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
 
   const [userInfo, setUserInfo] = useState(null);
   const [userActivity, setUserActivity] = useState(null);
   const [userAverageSessions, setUserAverageSessions] = useState(null);
-  // const [userPerformance, setUserPerformance] = useState(null);
+  const [userPerformance, setUserPerformance] = useState(null);
 
   useEffect(() => {
     // Fetch user data using the getUserData function
@@ -34,7 +41,7 @@ function User() {
       setUserActivity(data.activity.data);
 
       setUserAverageSessions(data.averageSessions.data);
-      // setUserPerformance(data.userPerformance.data);
+      setUserPerformance(data.performance.data);
     }
 
     fetchUserData();
@@ -47,7 +54,10 @@ function User() {
         <UserActivity userActivity={userActivity} />
         <UserDashboard userData={userInfo && userInfo.infos} />
       </ContentContainer>
-      <UserAverageSessions userAverageSessions={userAverageSessions} />
+      <CustomContainer>
+        <UserAverageSessions userAverageSessions={userAverageSessions} />
+        <UserPerformance data={userPerformance} />
+      </CustomContainer>
     </Main>
   );
 }
