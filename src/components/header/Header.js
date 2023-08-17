@@ -4,7 +4,8 @@ import logo from '../../assets/logo.svg';
 import styled from 'styled-components';
 
 const Head = styled.header`
-  position: relative;
+  // position: relative;
+  position: fixed;
   display: flex;
   width: 100%;
   height: 91px;

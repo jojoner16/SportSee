@@ -15,7 +15,7 @@ const Title = styled.h2`
   position: absolute;
   color: #20253a;
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 const StyledToolTip = styled.div`

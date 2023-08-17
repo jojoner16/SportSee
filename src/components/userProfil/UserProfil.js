@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Title = styled.h2`
-  margin: 4rem 0rem 1rem 0rem;
+  margin: 9rem 0rem 1rem 0rem;
   weight: 500;
   font-size: 3rem;
 `;
