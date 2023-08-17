@@ -54,23 +54,30 @@ const NavText = styled.p`
   margin: auto;
 `;
 
+const NavLinkStyled = styled(NavLink)`
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
 function SideBar() {
   return (
     <Container>
       <Nav>
         <Wrapper>
-          <NavLink to="#">
+          <NavLinkStyled to="#">
             <img src={iconMeditation} alt="Meditation" />
-          </NavLink>
-          <NavLink to="#">
+          </NavLinkStyled>
+          <NavLinkStyled to="#">
             <img src={iconSwiming} alt="Swiming" />
-          </NavLink>
-          <NavLink to="#">
+          </NavLinkStyled>
+          <NavLinkStyled to="#">
             <img src={iconBike} alt="Bike" />
-          </NavLink>
-          <NavLink to="#">
+          </NavLinkStyled>
+          <NavLinkStyled to="#">
             <img src={iconDumbBell} alt="Dumb-Bell" />
-          </NavLink>
+          </NavLinkStyled>
         </Wrapper>
         <NavText>©Copyright, SportSee 2020</NavText>
       </Nav>
