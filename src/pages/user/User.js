@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import UserProfil from '../../components/userProfil/UserProfil';
 import UserActivity from '../../components/userActivity/UserActivity';
 import UserDashboard from '../../components/userAside/UserAside';
+import UserAverageSessions from '../../components/userAverageSession/UserAverageSession';
 import styled from 'styled-components';
 import callApi from '../../services/CallApi';
 
@@ -20,7 +21,7 @@ function User() {
 
   const [userInfo, setUserInfo] = useState(null);
   const [userActivity, setUserActivity] = useState(null);
-  // const [userAverageSessions, setUserAverageSessions] = useState(null);
+  const [userAverageSessions, setUserAverageSessions] = useState(null);
   // const [userPerformance, setUserPerformance] = useState(null);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ function User() {
 
       setUserActivity(data.activity.data);
 
-      // setUserAverageSessions(data.userAverageSessions.data);
+      setUserAverageSessions(data.averageSessions.data);
       // setUserPerformance(data.userPerformance.data);
     }
 
@@ -46,6 +47,7 @@ function User() {
         <UserActivity userActivity={userActivity} />
         <UserDashboard userData={userInfo && userInfo.infos} />
       </ContentContainer>
+      <UserAverageSessions userAverageSessions={userAverageSessions} />
     </Main>
   );
 }
