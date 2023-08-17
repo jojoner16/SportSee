@@ -61,7 +61,7 @@ function UserPerformance({ data }) {
             dataKey="value"
             stroke="#FF0101"
             fill="#FF0101"
-            fillOpacity={0.6}
+            fillOpacity={0.7}
           />
         </RadarChart>
       </ResponsiveContainer>
