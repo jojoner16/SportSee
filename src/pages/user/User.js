@@ -5,6 +5,7 @@ import UserActivity from '../../components/userActivity/UserActivity';
 import UserDashboard from '../../components/userAside/UserAside';
 import UserAverageSessions from '../../components/userAverageSession/UserAverageSession';
 import UserPerformance from '../../components/userPerformance/UserPerformance';
+import UserScore from '../../components/userScore/UserScore';
 import styled from 'styled-components';
 import callApi from '../../services/CallApi';
 
@@ -41,6 +42,7 @@ function User() {
       setUserActivity(data.activity.data);
 
       setUserAverageSessions(data.averageSessions.data);
+
       setUserPerformance(data.performance.data);
     }
 
@@ -57,6 +59,10 @@ function User() {
       <CustomContainer>
         <UserAverageSessions userAverageSessions={userAverageSessions} />
         <UserPerformance data={userPerformance} />
+        <UserScore
+          score={userInfo?.infos?.score}
+          todayScore={userInfo?.infos?.todayScore}
+        />
       </CustomContainer>
     </Main>
   );
