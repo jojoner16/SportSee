@@ -19,9 +19,10 @@ const ContentContainer = styled.div`
 `;
 
 const CustomContainer = styled.div`
+  width: 67.6%;
   display: flex;
   gap: 2rem;
-  margin-top: -18rem;
+  margin-top: -19rem;
 `;
 
 function User() {

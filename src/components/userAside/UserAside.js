@@ -20,7 +20,7 @@ const CardContainer = styled.div`
   height: 124px;
   align-items: center;
   border-radius: 10px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.8rem;
   background-color: #fbfbfb;
   box-shadow: 0px 2px 4px 0px #00000005;
 `;
