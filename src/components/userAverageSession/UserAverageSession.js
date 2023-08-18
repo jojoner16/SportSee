@@ -90,18 +90,19 @@ function UserAverageSessions({ userAverageSessions }) {
             dot={false}
           />
           <XAxis
+            padding={{ left: 12, right: 12 }}
             dataKey="day"
             axisLine={false}
             tickLine={false}
+            includeHidden={true}
             tick={{
-              fill: 'rgba(255,255,255,0.6)',
+              fill: 'rgba(255,255,255,0.5)',
               fontSize: '0.75rem',
             }}
             tickFormatter={formatLabel}
-            // tickMargin={10}
           />
           <Tooltip content={CustomToolTip} cursor={false} />
-          <YAxis hide domain={['dataMin-10', 'dataMax+10']} />
+          <YAxis hide domain={['dataMin-20', 'dataMax+60']} />
           <defs>
             <linearGradient id="colorUv" x1="0%" y1="0" x2="100%" y2="0">
               <stop offset="0%" stopColor="rgba(255, 255, 255, 0.3)" />
