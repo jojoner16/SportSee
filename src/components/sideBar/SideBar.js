@@ -45,11 +45,11 @@ const NavText = styled.p`
   text-orientation: mixed;
   transform: rotate(180deg);
   position: absolute;
-  bottom: 59px;
-  left: 42px;
+  bottom: 3.6875rem;
+  left: 2.625rem;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 24px;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
   color: white;
   margin: auto;
 `;
