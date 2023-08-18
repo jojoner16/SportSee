@@ -31,10 +31,17 @@ const StyledToolTip = styled.div`
 const activityContainerStyles = {
   width: '52.1875rem',
   height: '20rem',
+  borderRadius: '5px',
   backgroundColor: '#FBFBFB',
   boxShadow: '0px 2px 4px 0px #00000005',
-  padding: '1.4rem',
+  padding: '1rem',
 };
+
+const ActivityContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 function UserActivity({ userActivity }) {
   if (!userActivity) {
@@ -56,56 +63,58 @@ function UserActivity({ userActivity }) {
   return (
     <div style={activityContainerStyles}>
       <Title>Activité quotidienne</Title>
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={userActivity.sessions} barSize={7} barGap={8}>
-          <CartesianGrid strokeDasharray="3" vertical={false} />
-          <XAxis
-            dataKey="day"
-            tick={{ fill: '#9B9EAC' }}
-            tickLine={false}
-            stroke="#DEDEDE"
-            strokeWidth={2}
-            tickMargin={16}
-            tickFormatter={(day) => new Date(day).getDate()}
-          />
-          <YAxis
-            yAxisId="kilogram"
-            orientation="right"
-            tickMargin={30}
-            tick={{ fill: '#9B9EAC' }}
-            tickLine={false}
-            axisLine={false}
-            domain={['dataMin-2', 'dataMax+1']}
-            tickCount={3}
-          />
-          <YAxis hide yAxisId="calories" />
-          <Tooltip
-            content={CustomToolTip}
-            cursor={{ fill: 'rgba(196, 196, 196, 0.5)' }}
-          />
-          <Bar
-            name="Poids (kg)"
-            dataKey="kilogram"
-            yAxisId="kilogram"
-            fill="#282D30"
-            radius={[3, 3, 0, 0]}
-          />
-          <Bar
-            name="Calories brûlées (kCal)"
-            dataKey="calories"
-            yAxisId="calories"
-            fill="#E60000"
-            radius={[3, 3, 0, 0]}
-          />
-          <Legend
-            verticalAlign="top"
-            align="right"
-            iconType="circle"
-            iconSize="10"
-            height={80}
-          />
-        </BarChart>
-      </ResponsiveContainer>
+      <ActivityContainer>
+        <ResponsiveContainer width="96%" height={280}>
+          <BarChart data={userActivity.sessions} barSize={7} barGap={8}>
+            <CartesianGrid strokeDasharray="3" vertical={false} />
+            <XAxis
+              dataKey="day"
+              tick={{ fill: '#9B9EAC' }}
+              tickLine={false}
+              stroke="#DEDEDE"
+              strokeWidth={2}
+              tickMargin={16}
+              tickFormatter={(day) => new Date(day).getDate()}
+            />
+            <YAxis
+              yAxisId="kilogram"
+              orientation="right"
+              tickMargin={30}
+              tick={{ fill: '#9B9EAC' }}
+              tickLine={false}
+              axisLine={false}
+              domain={['dataMin-2', 'dataMax+1']}
+              tickCount={3}
+            />
+            <YAxis hide yAxisId="calories" />
+            <Tooltip
+              content={CustomToolTip}
+              cursor={{ fill: 'rgba(196, 196, 196, 0.5)' }}
+            />
+            <Bar
+              name="Poids (kg)"
+              dataKey="kilogram"
+              yAxisId="kilogram"
+              fill="#282D30"
+              radius={[3, 3, 0, 0]}
+            />
+            <Bar
+              name="Calories brûlées (kCal)"
+              dataKey="calories"
+              yAxisId="calories"
+              fill="#E60000"
+              radius={[3, 3, 0, 0]}
+            />
+            <Legend
+              verticalAlign="top"
+              align="right"
+              iconType="circle"
+              iconSize="10"
+              height={80}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </ActivityContainer>
     </div>
   );
 }
