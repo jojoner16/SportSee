@@ -7,6 +7,7 @@ import UserAverageSessions from '../../components/userAverageSession/UserAverage
 import UserPerformance from '../../components/userPerformance/UserPerformance';
 import UserScore from '../../components/userScore/UserScore';
 import callApi from '../../services/CallApi';
+import SideBar from '../../components/sideBar/SideBar';
 
 function User() {
   const { userId } = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
@@ -35,6 +36,7 @@ function User() {
 
   return (
     <main className="mainContainer">
+      <SideBar />
       <UserProfil firstName={userInfo && userInfo.infos.userInfos.firstName} />
       <div className="userContentContainer">
         <UserActivity userActivity={userActivity} />

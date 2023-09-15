@@ -32,7 +32,8 @@ li {
 /* Styles communs à Home.js et User.js */
 .mainContainer {
   max-width: 1240px;
-  margin-left: 14rem; 
+  /* margin-left: 14rem; */
+  margin: auto;
 }
 
 /* Styles spécifiques aux liens de Home.js */
@@ -43,7 +44,7 @@ li {
   color: red;
 }
 
-.main-container a:hover {
+.mainContainer a:hover {
   color: blue;
 }
 
