@@ -4,84 +4,29 @@ import iconBike from '../../assets/iconBike.svg';
 import iconSwiming from '../../assets/iconSwiming.svg';
 import iconDumbBell from '../../assets/iconDumbBell.svg';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  overflow: hidden;
-  position: relative;
-`;
-
-const Nav = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 117px;
-  height: 100vh;
-  background: #020203;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-`;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 64px;
-  position: absolute;
-  top: 30%;
-  left: 26px;
-  a {
-    display: flex;
-    height: 64px;
-    width: 64px;
-    margin-bottom: 20px;
-  }
-`;
-
-const NavText = styled.p`
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  position: absolute;
-  bottom: 3.6875rem;
-  left: 2.625rem;
-  font-weight: 500;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
-  color: white;
-  margin: auto;
-`;
-
-const NavLinkStyled = styled(NavLink)`
-  transition: transform 0.3s;
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
+import '../../styles/components/sideBar.css'
 
 function SideBar() {
   return (
-    <Container>
-      <Nav>
-        <Wrapper>
-          <NavLinkStyled to="#">
+    <div className="container">
+      <div className="nav">
+        <div className="wrapper">
+          <NavLink to="#" className="navLink">
             <img src={iconMeditation} alt="Meditation" />
-          </NavLinkStyled>
-          <NavLinkStyled to="#">
-            <img src={iconSwiming} alt="Swiming" />
-          </NavLinkStyled>
-          <NavLinkStyled to="#">
+          </NavLink>
+          <NavLink to="#" className="navLink">
+            <img src={iconSwiming} alt="Swimming" />
+          </NavLink>
+          <NavLink to="#" className="navLink">
             <img src={iconBike} alt="Bike" />
-          </NavLinkStyled>
-          <NavLinkStyled to="#">
+          </NavLink>
+          <NavLink to="#" className="navLink">
             <img src={iconDumbBell} alt="Dumb-Bell" />
-          </NavLinkStyled>
-        </Wrapper>
-        <NavText>©Copyright, SportSee 2020</NavText>
-      </Nav>
-    </Container>
+          </NavLink>
+        </div>
+        <p className="navText">© Copyright, SportSee 2020</p>
+      </div>
+    </div>
   );
 }
 
