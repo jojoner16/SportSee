@@ -2,64 +2,64 @@
 
 /* Styles pour le conteneur principal */
 .container {
-    overflow: hidden;
-    position: relative;
-  }
-  
-  /* Styles pour la barre de navigation latérale */
-  .nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 117px;
-    height: 100vh;
-    background: #020203;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-  }
-  
-  /* Styles pour le wrapper contenant les icônes */
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 64px;
-    position: absolute;
-    top: 20%;
-    left: 26px;
-  }
-  
-  /* Styles pour les liens */
-  .wrapper a {
-    display: flex;
-    height: 64px;
-    width: 64px;
-    margin-bottom: 20px;
-  }
-  
-  /* Styles pour le texte vertical */
-  .navText {
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    position: absolute;
-    bottom: 3.6875rem;
-    left: 2.625rem;
-    font-weight: 500;
-    font-size: 0.75rem;
-    line-height: 1.5rem;
-    color: white;
-    margin: auto;
-  }
-  
-  /* Styles pour les liens NavLink */
-  .navLink {
-    transition: transform 0.3s;
-  }
-  
-  .navLink:hover {
-    transform: scale(1.1);
-  }
+  overflow: hidden;
+  position: relative;
+}
+
+/* Styles pour la barre de navigation latérale */
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 117px;
+  height: 100vh;
+  background: #020203;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+/* Styles pour le wrapper contenant les icônes */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 64px;
+  position: absolute;
+  top: 20%;
+  left: 26px;
+}
+
+/* Styles pour les liens */
+.wrapper a {
+  display: flex;
+  height: 64px;
+  width: 64px;
+  margin-bottom: 20px;
+}
+
+/* Styles pour le texte vertical */
+.navText {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 3rem;
+  left: 2.625rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  color: white;
+  margin: auto;
+}
+
+/* Styles pour les liens NavLink */
+.navLink {
+  transition: transform 0.3s;
+}
+
+.navLink:hover {
+  transform: scale(1.1);
+}

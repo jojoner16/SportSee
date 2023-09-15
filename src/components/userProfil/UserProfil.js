@@ -13,7 +13,7 @@ const RedText = styled.span`
 
 const Subtitle = styled.p`
   font-size: 1.125rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 `;
 
 function UserProfil({ firstName }) {
