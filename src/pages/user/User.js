@@ -6,24 +6,7 @@ import UserDashboard from '../../components/userAside/UserAside';
 import UserAverageSessions from '../../components/userAverageSession/UserAverageSession';
 import UserPerformance from '../../components/userPerformance/UserPerformance';
 import UserScore from '../../components/userScore/UserScore';
-import styled from 'styled-components';
 import callApi from '../../services/CallApi';
-
-const Main = styled.main`
-  max-width: 1240px;
-  margin-left: 14rem;
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
-`;
-
-const CustomContainer = styled.div`
-  width: 67.6%;
-  display: flex;
-  gap: 2rem;
-  margin-top: -19rem;
-`;
 
 function User() {
   const { userId } = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
@@ -51,21 +34,21 @@ function User() {
   }, [userId]);
 
   return (
-    <Main>
+    <main className="mainContainer">
       <UserProfil firstName={userInfo && userInfo.infos.userInfos.firstName} />
-      <ContentContainer>
+      <div className="userContentContainer">
         <UserActivity userActivity={userActivity} />
         <UserDashboard userData={userInfo && userInfo.infos} />
-      </ContentContainer>
-      <CustomContainer>
+      </div>
+      <div className="userCustomContainer">
         <UserAverageSessions userAverageSessions={userAverageSessions} />
         <UserPerformance data={userPerformance} />
         <UserScore
           score={userInfo?.infos?.score}
           todayScore={userInfo?.infos?.todayScore}
         />
-      </CustomContainer>
-    </Main>
+      </div>
+    </main>
   );
 }
 

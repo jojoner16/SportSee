@@ -28,3 +28,38 @@ li {
   background: black;
   border-radius: 0.5rem;
 }
+
+/* Styles communs à Home.js et User.js */
+.mainContainer {
+  max-width: 1240px;
+  margin-left: 14rem; 
+}
+
+/* Styles spécifiques aux liens de Home.js */
+.mainContainer a {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
+.main-container a:hover {
+  color: blue;
+}
+
+/* Styles spécifiques à Home.js */
+.homeTitle {
+  margin: 4rem 0rem;
+}
+
+/* Styles spécifiques à User.js */
+.userContentContainer {
+  display: flex;
+}
+
+.userCustomContainer {
+  width: 67.6%;
+  display: flex;
+  gap: 2rem;
+  margin-top: -19rem;
+}
