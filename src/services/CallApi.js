@@ -1,9 +1,16 @@
+// import {
+//   getUserInfos,
+//   getUserActivity,
+//   getUserAverageSessions,
+//   getUserPerformance,
+// } from './GetData';
+
 import {
   getUserInfos,
   getUserActivity,
   getUserAverageSessions,
   getUserPerformance,
-} from './GetData';
+} from './Api';
 
 // Fonction pour simuler un appel à l'API et récupérer les données utilisateur
 const callApi = async (id) => {
