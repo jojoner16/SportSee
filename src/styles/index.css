@@ -31,8 +31,9 @@ li {
 
 /* Styles communs à Home.js et User.js */
 .mainContainer {
-  width: 64rem;
+  width: 90rem;
   margin: auto;
+  margin-left: 29rem;
 }
 
 @media screen and (max-width: 1024px) {
