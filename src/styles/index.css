@@ -31,8 +31,33 @@ li {
 
 /* Styles communs à Home.js et User.js */
 .mainContainer {
-  max-width: 77.5rem;
+  width: 64rem;
   margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContainer {
+    width: 52rem;
+    margin-left: 10rem;
+  }
+
+  /* .userCustomContainer {
+    display: block !important;
+    margin-left: auto;
+    margin-right: auto;
+  } */
+
+  .userCustomContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .userScoreContainer {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Styles spécifiques aux liens de Home.js */
