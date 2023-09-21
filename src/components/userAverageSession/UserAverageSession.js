@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   LineChart,
   Line,
@@ -8,39 +7,7 @@ import {
   YAxis,
   ResponsiveContainer,
 } from 'recharts';
-
-const averageSessionContainerStyle = {
-  backgroundColor: '#FF0000',
-  borderRadius: '5px',
-  width: '258px',
-  height: '263px',
-};
-
-const Title = styled.h2`
-  width: 9.1875rem;
-  height: 3rem;
-  margin: 1.4rem;
-  position: absolute;
-  color: #ffffff;
-  opacity: 0.504;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  line-height: 1.5rem;
-`;
-
-const StyledToolTip = styled.div`
-  width: 2.4375rem;
-  height: 1.5625rem;
-  background-color: white;
-
-  p {
-    font-size: 0.625rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-    letter-spacing: 0rem;
-    text-align: center;
-  }
-`;
+import '../../styles/components/userAverageSession.css';
 
 function UserAverageSessions({ userAverageSessions }) {
   const formatLabel = (value) => {
@@ -57,9 +24,9 @@ function UserAverageSessions({ userAverageSessions }) {
   function CustomToolTip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
-        <StyledToolTip>
+        <div className="customToolTip">
           <p>{payload[0].value + ' min'}</p>
-        </StyledToolTip>
+        </div>
       );
     }
     return null;
@@ -70,11 +37,11 @@ function UserAverageSessions({ userAverageSessions }) {
   }
 
   return (
-    <div style={averageSessionContainerStyle}>
-      <Title className="chartaverage-sessions-title">
+    <div className="averageSessionContainer">
+      <h2 className="averageSessionTitle">
         Durée moyenne des <br />
         sessions
-      </Title>
+      </h2>
       <ResponsiveContainer>
         <LineChart data={userAverageSessions.sessions}>
           <Line

@@ -1,0 +1,37 @@
+/* userActivity.css */
+
+/* Title styles */
+.titleActivity {
+  position: absolute;
+  color: #20253a;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* StyledToolTip styles */
+.StyledToolTip {
+  display: block !important;
+  padding: 0.25rem 0.4375rem;
+  background-color: red;
+  color: white;
+  font-size: 0.6875rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+/* Activity Container styles */
+.ActivityContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Activity Container styles */
+.activityContainerStyles {
+  width: 52.1875rem;
+  height: 20rem;
+  border-radius: 0.3125rem;
+  background-color: #fbfbfb;
+  box-shadow: 0rem 0.125rem 0.25rem 0rem #00000005;
+  padding: 1rem;
+}

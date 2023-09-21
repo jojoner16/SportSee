@@ -1,0 +1,56 @@
+.Head {
+  /* position: relative; */
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 5.6875rem;
+  background: #020203;
+  padding: 0rem 5.4375rem 0rem 1.8125rem;
+  box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.Head img {
+  width: 11.125rem;
+  margin-right: 9.375rem;
+}
+
+.Nav {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Nav a {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+  position: relative;
+
+  &:hover {
+    color: red;
+    transition: color 0.3s ease;
+  }
+
+  /* Pseudo-élément pour l'underline */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.125rem;
+    width: 100%;
+    height: 0.125rem;
+    background-color: red;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  /* Style pour :hover */
+  &:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}

@@ -9,13 +9,7 @@ import {
   PolarRadiusAxis,
   Text,
 } from 'recharts';
-
-const performanceContainerStyle = {
-  backgroundColor: '#282D30',
-  borderRadius: '5px',
-  width: '258px',
-  height: '263px',
-};
+import '../../styles/components/userPerformance.css';
 
 function UserPerformance({ data }) {
   if (!data || !data.kind || !data.data) {
@@ -48,7 +42,7 @@ function UserPerformance({ data }) {
   };
 
   return (
-    <div style={performanceContainerStyle}>
+    <div className="performanceContainerStyle">
       <ResponsiveContainer>
         <RadarChart outerRadius={90} data={[...data.data].reverse()}>
           <PolarGrid radialLines={false} />

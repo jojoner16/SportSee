@@ -1,0 +1,32 @@
+.averageSessionContainer {
+  background-color: #ff0000;
+  border-radius: 0.3125rem;
+  width: 16.125rem;
+  height: 16.4375rem;
+}
+
+.averageSessionTitle {
+  width: 9.1875rem;
+  height: 3rem;
+  margin: 1.4rem;
+  position: absolute;
+  color: #ffffff;
+  opacity: 0.504;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.customToolTip {
+  width: 2.4375rem;
+  height: 1.5625rem;
+  background-color: white;
+}
+
+.customToolTip p {
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: 0rem;
+  text-align: center;
+}

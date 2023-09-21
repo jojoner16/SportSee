@@ -1,0 +1,33 @@
+.userScoreTitle {
+  position: absolute;
+  margin: 1.4rem;
+  color: #20253a;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.userScoreContainer {
+  border-radius: 0.3125rem;
+  width: 16.125rem;
+  height: 16.4375rem;
+  background-color: #fbfbfb;
+}
+
+.percentContainer {
+  position: relative;
+  text-align: center;
+  top: -10.6rem;
+}
+
+.percent {
+  color: #282d30;
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+
+.grayText {
+  color: #74798c;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+}

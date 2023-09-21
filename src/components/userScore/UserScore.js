@@ -1,39 +1,5 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
-import styled from 'styled-components';
-
-const userScoreContainer = {
-  borderRadius: '5px',
-  width: '258px',
-  height: '263px',
-  backgroundColor: '#fbfbfb',
-};
-
-const percent = {
-  color: '#282d30',
-  fontSize: '1.625rem',
-  fontWeight: '700',
-};
-
-const percentContainer = {
-  position: 'relative',
-  textAlign: 'center',
-  top: '-10.6rem',
-};
-
-const Title = styled.h2`
-  position: absolute;
-  margin: 1.4rem;
-  color: #20253a;
-  font-size: 0.9375rem;
-  font-weight: 500;
-`;
-
-const grayText = {
-  color: '#74798C',
-  fontSize: '1rem',
-  fontWeight: '500',
-  lineHeight: '1.625rem',
-};
+import '../../styles/components/userScore.css';
 
 function UserScore({ score, todayScore }) {
   console.log('todayScore:', todayScore);
@@ -41,8 +7,8 @@ function UserScore({ score, todayScore }) {
   const data = [{ name: 'score', value: todayScore || score || 0 }];
 
   return (
-    <div style={userScoreContainer}>
-      <Title>Score</Title>
+    <div className="userScoreContainer">
+      <h2 className="userScoreTitle">Score</h2>
       <ResponsiveContainer>
         <RadialBarChart
           innerRadius="0%"
@@ -66,10 +32,10 @@ function UserScore({ score, todayScore }) {
           />
         </RadialBarChart>
       </ResponsiveContainer>
-      <div style={percentContainer}>
-        <p style={percent}>{(todayScore || score) * 100}%</p>
-        <p style={grayText}>de votre</p>
-        <p style={grayText}>objectif</p>
+      <div className="percentContainer">
+        <p className="percent">{(todayScore || score) * 100}%</p>
+        <p className="grayText">de votre</p>
+        <p className="grayText">objectif</p>
       </div>
     </div>
   );

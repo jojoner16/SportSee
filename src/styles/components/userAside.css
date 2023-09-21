@@ -1,0 +1,43 @@
+.dashboardAside {
+  margin-left: 9rem;
+}
+
+.cardContainer {
+  display: flex;
+  width: 16.125rem;
+  height: 7.75rem;
+  align-items: center;
+  border-radius: 0.3125rem;
+  margin-bottom: 2.8rem;
+  background-color: #fbfbfb;
+  box-shadow: 0rem 0.125rem 0.25rem 0rem #00000005;
+}
+
+.cardWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.iconWrapper {
+  margin-right: 1.2rem;
+}
+
+.title {
+  line-height: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #282d30;
+}
+
+.cardSubtitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #74798c;
+}
+
+.cardIcon {
+  margin-left: 2rem;
+}

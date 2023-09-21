@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   BarChart,
   Bar,
@@ -10,38 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-
-const Title = styled.h2`
-  position: absolute;
-  color: #20253a;
-  font-size: 0.9375rem;
-  font-weight: 600;
-`;
-
-const StyledToolTip = styled.div`
-  display: block !important;
-  padding: 0.25rem 0.4375rem;
-  background-color: red;
-  color: white;
-  font-size: 0.6875rem;
-  line-height: 1.5rem;
-  text-align: center;
-`;
-
-const activityContainerStyles = {
-  width: '52.1875rem',
-  height: '20rem',
-  borderRadius: '5px',
-  backgroundColor: '#FBFBFB',
-  boxShadow: '0px 2px 4px 0px #00000005',
-  padding: '1rem',
-};
-
-const ActivityContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import '../../styles/components/userActivity.css';
 
 function UserActivity({ userActivity }) {
   if (!userActivity) {
@@ -51,19 +19,19 @@ function UserActivity({ userActivity }) {
   function CustomToolTip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
-        <StyledToolTip>
+        <div className="StyledToolTip">
           <p>{payload[0].value + 'kg'}</p>
           <p>{payload[1].value + 'Kcal'}</p>
-        </StyledToolTip>
+        </div>
       );
     }
     return null;
   }
 
   return (
-    <div style={activityContainerStyles}>
-      <Title>Activité quotidienne</Title>
-      <ActivityContainer>
+    <div className="activityContainerStyles">
+      <h2 className="titleActivity">Activité quotidienne</h2>
+      <div className="ActivityContainer">
         <ResponsiveContainer width="96%" height={280}>
           <BarChart data={userActivity.sessions} barSize={7} barGap={8}>
             <CartesianGrid strokeDasharray="3" vertical={false} />
@@ -114,7 +82,7 @@ function UserActivity({ userActivity }) {
             />
           </BarChart>
         </ResponsiveContainer>
-      </ActivityContainer>
+      </div>
     </div>
   );
 }
