@@ -21,7 +21,7 @@ li {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -31,7 +31,7 @@ li {
 
 /* Styles communs à Home.js et User.js */
 .mainContainer {
-  max-width: 1240px;
+  max-width: 77.5rem;
   margin: auto;
 }
 
@@ -41,10 +41,11 @@ li {
   display: flex;
   flex-direction: column;
   color: red;
+  width: 5rem;
 }
 
 .mainContainer a:hover {
-  color: blue;
+  color: black;
 }
 
 /* Styles spécifiques à Home.js */
