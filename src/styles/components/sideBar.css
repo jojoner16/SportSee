@@ -24,11 +24,9 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  width: 4rem;
   position: absolute;
-  top: 20%;
-  left: 1.625rem;
+  top: 30%;
+  left: 1.4rem;
 }
 
 /* Styles pour les liens */
@@ -55,10 +53,19 @@
 }
 
 /* Styles pour les liens NavLink */
-.navLink {
+.wrapper .navLink {
   transition: transform 0.3s;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.2rem;
 }
 
 .navLink:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    top: 20%;
+  }
 }

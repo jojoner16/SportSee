@@ -30,3 +30,9 @@
   letter-spacing: 0rem;
   text-align: center;
 }
+
+@media screen and (max-width: 1024px) {
+  .averageSessionTitle {
+    margin: 1rem;
+  }
+}

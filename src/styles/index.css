@@ -36,31 +36,6 @@ li {
   margin-left: 29rem;
 }
 
-@media screen and (max-width: 1024px) {
-  .mainContainer {
-    width: 52rem;
-    margin-left: 10rem;
-  }
-
-  /* .userCustomContainer {
-    display: block !important;
-    margin-left: auto;
-    margin-right: auto;
-  } */
-
-  .userCustomContainer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
-  .userScoreContainer {
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 /* Styles spécifiques aux liens de Home.js */
 .mainContainer a {
   margin-top: 1rem;
@@ -89,4 +64,23 @@ li {
   display: flex;
   gap: 2rem;
   margin-top: -18.7rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContainer {
+    width: 52rem;
+    margin-left: 10rem;
+  }
+
+  .averageSessionContainer,
+  .performanceContainerStyle,
+  .userScoreContainer {
+    width: 200px;
+    height: 200px;
+  }
+
+  .userCustomContainer {
+    margin-top: -13.86rem;
+    gap: 0.8rem;
+  }
 }

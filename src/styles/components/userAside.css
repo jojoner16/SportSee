@@ -41,3 +41,19 @@
 .cardIcon {
   margin-left: 2rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .cardContainer {
+    width: 12.125rem;
+    height: 7.2rem;
+    margin-bottom: 1.625rem;
+  }
+
+  .cardIcon {
+    margin-left: 0.8rem;
+  }
+
+  .dashboardAside {
+    margin-left: 0.8rem;
+  }
+}

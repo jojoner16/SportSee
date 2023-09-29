@@ -54,3 +54,9 @@
     transform: scaleX(1);
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .Head img {
+    margin-right: 6rem;
+  }
+}
