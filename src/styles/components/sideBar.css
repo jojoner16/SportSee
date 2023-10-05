@@ -40,7 +40,7 @@
 /* Styles pour le texte vertical */
 .navText {
   writing-mode: vertical-lr;
-  text-orientation: mixed;
+  /* text-orientation: mixed; */
   transform: rotate(180deg);
   position: absolute;
   bottom: 3rem;
@@ -57,7 +57,6 @@
   transition: transform 0.3s;
   width: 4rem;
   height: 4rem;
-  margin-bottom: 0.2rem;
 }
 
 .navLink:hover {
