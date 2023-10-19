@@ -40,7 +40,6 @@
 /* Styles pour le texte vertical */
 .navText {
   writing-mode: vertical-lr;
-  /* text-orientation: mixed; */
   transform: rotate(180deg);
   position: absolute;
   bottom: 3rem;
