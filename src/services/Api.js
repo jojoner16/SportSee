@@ -1,3 +1,11 @@
+// Fonction de formatage des données utilisateur
+export const formatUserData = (todayScore, score) => {
+  return {
+    name: 'score',
+    value: todayScore || score || 0,
+  };
+};
+
 // Fonction de récupération des informations utilisateur
 export const getUserInfos = async (id) => {
   try {

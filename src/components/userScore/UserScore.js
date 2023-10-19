@@ -1,10 +1,15 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
+import { formatUserData } from '../../services/Api';
 import '../../styles/components/userScore.css';
 
 function UserScore({ score, todayScore }) {
   console.log('todayScore:', todayScore);
   console.log('score:', score);
-  const data = [{ name: 'score', value: todayScore || score || 0 }];
+
+  // Utilisation de la fonction formatUserData pour formater les données
+  const data = [formatUserData(todayScore, score)];
+
+  // const data = [{ name: 'score', value: todayScore || score || 0 }];
 
   return (
     <div className="userScoreContainer">
