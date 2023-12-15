@@ -19,14 +19,16 @@ function User() {
   useEffect(() => {
     // Fetch user data using the getUserData function
     async function fetchUserData() {
-      const data = await callApi(parseInt(userId));
-      setUserInfo(data);
-
-      setUserActivity(data.activity.data);
-
-      setUserAverageSessions(data.averageSessions.data);
-
-      setUserPerformance(data.performance.data);
+      try {
+        const data = await callApi(parseInt(userId));
+        setUserInfo(data);
+        setUserActivity(data.activity?.data || []);
+        setUserAverageSessions(data.averageSessions?.data || []);
+        setUserPerformance(data.performance?.data || []);
+      } catch (error) {
+        // Gérer les erreurs de manière appropriée, par exemple, afficher un message d'erreur.
+        console.error('Error fetching user data:', error);
+      }
     }
 
     fetchUserData();
@@ -34,10 +36,10 @@ function User() {
 
   return (
     <main className="mainContainer">
-      <UserProfil firstName={userInfo && userInfo.infos.userInfos.firstName} />
+      <UserProfil firstName={userInfo?.infos?.userInfos?.firstName} />
       <div className="userContentContainer">
         <UserActivity userActivity={userActivity} />
-        <UserDashboard userData={userInfo && userInfo.infos} />
+        <UserDashboard userData={userInfo?.infos} />
       </div>
       <div className="userCustomContainer">
         <UserAverageSessions userAverageSessions={userAverageSessions} />
