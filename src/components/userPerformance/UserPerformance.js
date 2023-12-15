@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 import {
   RadarChart,
   PolarGrid,
@@ -10,10 +9,14 @@ import {
   Text,
 } from 'recharts';
 import '../../styles/components/userPerformance.css';
+import { formatUserPerformance } from '../../services/FormatData';
 
 function UserPerformance({ data }) {
-  if (!data || !data.kind || !data.data) {
-    return null; // Afficher un contenu vide ou un message de chargement
+  // Utilisation de la fonction de formatage
+  const formattedData = formatUserPerformance(data);
+
+  if (!formattedData || !formattedData.kind || !formattedData.data) {
+    return <div>Chargement en cours...</div>;
   }
   const renderPolarAngleAxis = ({ payload, x, y, cx, cy, ...rest }) => {
     const formatLabel = (value) => {
@@ -34,8 +37,8 @@ function UserPerformance({ data }) {
         fontSize="0.75rem"
       >
         {formatLabel(
-          data.kind[payload.value].charAt(0).toUpperCase() +
-            data.kind[payload.value].slice(1)
+          formattedData.kind[payload.value].charAt(0).toUpperCase() +
+            formattedData.kind[payload.value].slice(1)
         )}
       </Text>
     );
@@ -44,7 +47,7 @@ function UserPerformance({ data }) {
   return (
     <div className="performanceContainerStyle">
       <ResponsiveContainer>
-        <RadarChart outerRadius={90} data={[...data.data].reverse()}>
+        <RadarChart outerRadius={90} data={[...formattedData.data].reverse()}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"

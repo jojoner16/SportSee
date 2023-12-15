@@ -10,11 +10,19 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import '../../styles/components/userActivity.css';
+import { formatUserActivity } from '../../services/FormatData';
 
 function UserActivity({ userActivity }) {
-  if (!userActivity) {
+  if (
+    !userActivity ||
+    !userActivity.sessions ||
+    userActivity.sessions.length === 0
+  ) {
     return <div>Chargement en cours...</div>;
   }
+
+  // Formater les données d'activité utilisateur en utilisant la fonction de formatage
+  const formattedUserActivity = formatUserActivity(userActivity);
 
   function CustomToolTip({ active, payload }) {
     if (active && payload && payload.length) {
@@ -33,7 +41,11 @@ function UserActivity({ userActivity }) {
       <h2 className="titleActivity">Activité quotidienne</h2>
       <div className="ActivityContainer">
         <ResponsiveContainer width="96%" height={280}>
-          <BarChart data={userActivity.sessions} barSize={7} barGap={8}>
+          <BarChart
+            data={formattedUserActivity.sessions}
+            barSize={7}
+            barGap={8}
+          >
             <CartesianGrid strokeDasharray="3" vertical={false} />
             <XAxis
               dataKey="day"

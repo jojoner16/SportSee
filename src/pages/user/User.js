@@ -6,7 +6,7 @@ import UserDashboard from '../../components/userAside/UserAside';
 import UserAverageSessions from '../../components/userAverageSession/UserAverageSession';
 import UserPerformance from '../../components/userPerformance/UserPerformance';
 import UserScore from '../../components/userScore/UserScore';
-import callApi from '../../services/CallApi';
+import { callApi } from '../../services/Api';
 
 function User() {
   const { userId } = useParams(); // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
@@ -20,7 +20,6 @@ function User() {
     // Fetch user data using the getUserData function
     async function fetchUserData() {
       const data = await callApi(parseInt(userId));
-      console.log('Fetched data:', data);
       setUserInfo(data);
 
       setUserActivity(data.activity.data);
@@ -44,6 +43,7 @@ function User() {
         <UserAverageSessions userAverageSessions={userAverageSessions} />
         <UserPerformance data={userPerformance} />
         <UserScore
+          userId={userInfo?.infos?.id}
           score={userInfo?.infos?.score}
           todayScore={userInfo?.infos?.todayScore}
         />

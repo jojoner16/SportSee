@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import '../../styles/components/userAverageSession.css';
+import { formatUserAverageSessions } from '../../services/FormatData';
 
 function UserAverageSessions({ userAverageSessions }) {
   const formatLabel = (value) => {
@@ -33,7 +34,19 @@ function UserAverageSessions({ userAverageSessions }) {
   }
 
   if (!userAverageSessions || !userAverageSessions.sessions) {
-    return null;
+    return <div>Chargement en cours...</div>;
+  }
+
+  // Formater les données de session moyenne en utilisant la fonction de formatage
+  const formattedUserAverageSessions =
+    formatUserAverageSessions(userAverageSessions);
+
+  if (
+    !formattedUserAverageSessions ||
+    !formattedUserAverageSessions.sessions ||
+    formattedUserAverageSessions.sessions.length === 0
+  ) {
+    return <div>Chargement en cours...</div>;
   }
 
   return (
@@ -43,7 +56,7 @@ function UserAverageSessions({ userAverageSessions }) {
         sessions
       </h2>
       <ResponsiveContainer>
-        <LineChart data={userAverageSessions.sessions}>
+        <LineChart data={formattedUserAverageSessions.sessions}>
           <Line
             type="natural"
             dataKey="sessionLength"
