@@ -1,7 +1,7 @@
 // Import des fonctions depuis GetData
 import * as GetData from './GetData';
 
-// require('dotenv').config();
+const mode = process.env.REACT_APP_SERV_ENV;
 
 // Fonction de récupération des informations utilisateur
 const getUserInfos = async (id) => {
@@ -51,8 +51,8 @@ const getUserPerformance = async (id) => {
 
 // Fonction pour simuler un appel à l'API et récupérer les données utilisateur
 export const callApi = async (id) => {
-  const mode = 'PROD';
   console.log(mode);
+
   switch (mode) {
     case 'PROD':
       try {
