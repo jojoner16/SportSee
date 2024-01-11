@@ -33,10 +33,6 @@ function UserAverageSessions({ userAverageSessions }) {
     return null;
   }
 
-  if (!userAverageSessions || !userAverageSessions.sessions) {
-    return <div>Chargement en cours...</div>;
-  }
-
   // Formater les données de session moyenne en utilisant la fonction de formatage
   const formattedUserAverageSessions =
     formatUserAverageSessions(userAverageSessions);

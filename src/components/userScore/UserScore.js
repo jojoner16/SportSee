@@ -4,7 +4,11 @@ import { formatUserScore } from '../../services/FormatData';
 
 function UserScore({ userId, score, todayScore }) {
   // Utilisation de la fonction formatUserScore pour formater les données
-  const data = formatUserScore(userId, todayScore, score);
+  const formattedUserScore = formatUserScore(userId, todayScore, score);
+
+  if (!formattedUserScore || formattedUserScore.length === 0) {
+    return <div>Chargement en cours...</div>;
+  }
 
   return (
     <div className="userScoreContainer">
@@ -13,7 +17,7 @@ function UserScore({ userId, score, todayScore }) {
         <RadialBarChart
           innerRadius="0%"
           outerRadius="0%"
-          data={data}
+          data={formattedUserScore}
           startAngle={90}
           endAngle={360 + 90}
         >

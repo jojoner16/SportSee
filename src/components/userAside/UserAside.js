@@ -26,7 +26,7 @@ function Card({ userKeyData, unit, subtitle, className, logo }) {
 
 function DashboardAside({ userData }) {
   if (!userData || !userData.keyData) {
-    return null;
+    return <div>Chargement en cours...</div>;
   }
 
   const { keyData } = userData;
