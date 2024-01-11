@@ -4,7 +4,7 @@ import Home from '../pages/home/Home';
 import User from '../pages/user/User';
 import Header from './header/Header';
 import SideBar from '../components/sideBar/SideBar';
-import Error from '../components/error/Error';
+import Error from '../pages/error/Error';
 
 const App = () => {
   // useEffect permet de modifier le titre de la page

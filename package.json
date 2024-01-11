@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "cross-env REACT_SERV_EBV_DEV react-scripts start",
+    "dev": "cross-env REACT_APP_SERV_ENV=DEV react-scripts start",
     "prod": "cross-env REACT_APP_SERV_ENV=PROD react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",

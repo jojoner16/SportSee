@@ -1,0 +1,21 @@
+.error {
+  display: flex;
+  justify-content: center;
+  margin: 20rem;
+  height: 100%;
+}
+
+.errorText {
+  text-align: center;
+  line-height: 2rem;
+  margin-left: 10rem;
+}
+
+.errorText h2 {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin: 0 0.6rem 0 0.6rem;
+}
